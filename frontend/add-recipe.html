@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe - Nepali RecipeHub</title>
+
+    <link rel="stylesheet" href="add-form.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <h1>Nepali RecipeHub</hh1>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Recipes</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="popular.html">Popular</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="add-recipe.html">Contact</a></li>
+               
+            </ul>
+
+            <div class="right-section">
+                <input
+                    type="text"
+                    placeholder="Search Recipes..."
+                    class="search-box"
+                >
+
+                <a href="login1.html">
+                    <button class="login-btn">Login</button>
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Form -->
+    <div class="container">
+
+        <h1>Add New Recipe</h1>
+
+        <p>
+            Fill in the details below to add a new recipe to your
+            Recipe Management System.
+        </p>
+
+        <form action="#" method="post" enctype="multipart/form-data">
+
+            <div class="field">
+                <label for="recipe-name">Recipe Name</label>
+
+                <input
+                    type="text"
+                    id="recipe-name"
+                    name="recipe-name"
+                    placeholder="Enter recipe name"
+                    required
+                >
+            </div>
+
+            <div class="row">
+
+                <div class="field">
+                    <label for="category">Category</label>
+
+                    <select id="category" name="category">
+                        <option value="">Select Category</option>
+                        <option>Breakfast</option>
+                        <option>Lunch</option>
+                        <option>Dinner</option>
+                        <option>Snacks</option>
+                        <option>Dessert</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="time">Cooking Time</label>
+
+                    <input
+                        type="text"
+                        id="time"
+                        name="time"
+                        placeholder="e.g. 30 minutes"
+                    >
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="field">
+                    <label for="difficulty">Difficulty Level</label>
+
+                    <select id="difficulty" name="difficulty">
+                        <option>Easy</option>
+                        <option>Medium</option>
+                        <option>Hard</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="image">Recipe Image</label>
+
+                    <input
+                        type="file"
+                        id="image"
+                        name="image"
+                        accept="image/*"
+                    >
+                </div>
+
+            </div>
+
+            <div class="field">
+                <label for="ingredients">Ingredients</label>
+
+                <textarea
+                    id="ingredients"
+                    name="ingredients"
+                    placeholder="Enter ingredients separated by commas..."
+                ></textarea>
+            </div>
+
+            <div class="field">
+                <label for="instructions">Cooking Instructions</label>
+
+                <textarea
+                    id="instructions"
+                    name="instructions"
+                    placeholder="Enter the cooking steps here..."
+                ></textarea>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="submit-btn">
+                    Add Recipe
+                </button>
+
+                <button type="reset" class="reset-btn">
+                    Clear Form
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h2>Nepali RecipeHub</h2>
+
+                <p>
+                    Discover authentic Nepali recipes and explore
+                    the rich culinary heritage of Nepal.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+
+                <p>info@nepalirecipehub.com</p>
+                <p>+977-9800000000</p>
+                <p>Kathmandu, Nepal</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>Twitter</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Nepali RecipeHub. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>

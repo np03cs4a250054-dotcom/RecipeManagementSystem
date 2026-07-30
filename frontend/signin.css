@@ -1,12 +1,13 @@
 :root {
-  --bg-deep: #0a1a5c;
-  --card-bg: #e9edfb;
-  --accent: #2540d6;
-  --accent-dark: #16309c;
-  --ink: #10143a;
-  --muted: #6b7290;
-  --line: #c7cdf0;
-  --gold: #f2b84b;
+  --bg-deep: #F5F1ED;
+  --card-bg: #FFFFFF;
+  --accent: #C8102E;
+  --accent-dark: #9B0D23;
+  --ink: #2C2C2C;
+  --muted: #6D6D6D;
+  --line: #E5D9D0;
+  --gold: #F4C542;
+
   --font-display: "Space Grotesk", "Segoe UI", sans-serif;
   --font-body: "Inter", "Segoe UI", sans-serif;
 }
@@ -21,12 +22,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(
-    circle at 20% 20%,
-    #14247a 0%,
-    var(--bg-deep) 55%,
-    #071048 100%
-  );
+  background: var(--bg-deep);
   font-family: var(--font-body);
   padding: 32px;
 }
@@ -39,7 +35,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
-  box-shadow: 0 40px 80px rgba(4, 10, 40, 0.45);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
 }
 
 .form-side {
@@ -53,7 +49,7 @@ h1 {
   font-family: var(--font-display);
   font-size: 32px;
   margin: 0 0 8px;
-  color: var(--ink);
+  color: var(--accent);
   letter-spacing: -0.5px;
 }
 
@@ -68,6 +64,7 @@ h1 {
   font-weight: 600;
   text-decoration: none;
 }
+
 .subtext a:hover {
   text-decoration: underline;
 }
@@ -93,7 +90,7 @@ input[type="password"] {
   padding: 13px 16px;
   border-radius: 12px;
   border: 1.5px solid var(--line);
-  background: #fff;
+  background: #FFFFFF;
   font-size: 14px;
   font-family: var(--font-body);
   color: var(--ink);
@@ -104,12 +101,12 @@ input[type="password"] {
 }
 
 input::placeholder {
-  color: #a6abc9;
+  color: #B0B0B0;
 }
 
 input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(37, 64, 214, 0.15);
+  box-shadow: 0 0 0 4px rgba(200, 16, 46, 0.15);
 }
 
 .checkbox-row {
@@ -134,7 +131,11 @@ input:focus {
 button {
   appearance: none;
   border: none;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-dark)
+  );
   color: #fff;
   font-family: var(--font-display);
   font-size: 15px;
@@ -146,16 +147,18 @@ button {
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease;
-  box-shadow: 0 12px 24px rgba(37, 64, 214, 0.35);
+  box-shadow: 0 12px 24px rgba(200, 16, 46, 0.25);
 }
 
 button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 16px 30px rgba(37, 64, 214, 0.45);
+  box-shadow: 0 16px 30px rgba(200, 16, 46, 0.35);
 }
+
 button:active {
   transform: translateY(0);
 }
+
 button:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 3px;
@@ -163,7 +166,11 @@ button:focus-visible {
 
 .illustration-side {
   position: relative;
-  background: linear-gradient(160deg, #dce2fa, #c9d2f6);
+  background: linear-gradient(
+    160deg,
+    #FFF7F0,
+    #FDE9EC
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,15 +185,16 @@ button:focus-visible {
 .float {
   animation: floaty 4s ease-in-out infinite;
 }
+
 .float-slow {
   animation: floaty 6s ease-in-out infinite;
 }
 
 @keyframes floaty {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -196,11 +204,13 @@ button:focus-visible {
   .card {
     grid-template-columns: 1fr;
   }
+
   .illustration-side {
     order: -1;
     padding: 32px 0;
     min-height: 220px;
   }
+
   .form-side {
     padding: 40px 28px;
   }
