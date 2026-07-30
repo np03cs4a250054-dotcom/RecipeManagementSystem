@@ -1,0 +1,107 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#FFF8F2;
+    color:#333;
+}
+
+/* ================= POPULAR CONTAINER ================= */
+
+.popular-container{
+    min-height:100vh;
+    padding:70px 60px;
+    text-align:center;
+}
+
+/* ================= HEADING ================= */
+
+.popular-container h1{
+    color:#C8102E;
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.popular-intro{
+    max-width:650px;
+    margin:0 auto 50px;
+    color:#666;
+    font-size:17px;
+    line-height:1.7;
+}
+
+/* ================= RECIPE CONTAINER ================= */
+
+.popular-recipes{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+/* ================= RECIPE CARD ================= */
+
+.popular-card{
+    width:320px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    transition:0.3s;
+}
+
+.popular-card:hover{
+    transform:translateY(-10px);
+}
+
+/* ================= IMAGE ================= */
+
+.popular-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+/* ================= CARD CONTENT ================= */
+
+.card-content{
+    padding:25px;
+}
+
+.card-content h2{
+    color:#C8102E;
+    margin-bottom:12px;
+}
+
+.card-content p{
+    color:#666;
+    line-height:1.7;
+    font-size:15px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:800px){
+
+    .popular-container{
+        padding:50px 20px;
+    }
+
+    .popular-container h1{
+        font-size:35px;
+    }
+
+    .popular-intro{
+        font-size:15px;
+    }
+
+    .popular-card{
+        width:100%;
+        max-width:350px;
+    }
+
+}

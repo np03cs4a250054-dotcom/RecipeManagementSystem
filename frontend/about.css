@@ -1,0 +1,68 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#FFF8F2;
+    color:#333;
+}
+
+/* ================= ABOUT CONTAINER ================= */
+
+.about-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px;
+}
+
+/* ================= ABOUT CONTENT ================= */
+
+.about-content{
+    width:800px;
+    background:white;
+    padding:50px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+.about-content h1{
+    color:#C8102E;
+    font-size:45px;
+    margin-bottom:25px;
+}
+
+.about-content p{
+    color:#666;
+    font-size:17px;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:800px){
+
+    .about-container{
+        padding:30px 20px;
+    }
+
+    .about-content{
+        width:100%;
+        padding:35px 25px;
+    }
+
+    .about-content h1{
+        font-size:35px;
+    }
+
+    .about-content p{
+        font-size:15px;
+    }
+
+}
