@@ -19,7 +19,7 @@ body {
 ========================= */
 
 .navbar {
-    min-height: 80px;
+    height: 80px;
 
     background: #d40f2f;
 
@@ -34,7 +34,7 @@ body {
 
 
 .logo {
-    margin-right: 55px;
+    margin-right: 60px;
 }
 
 
@@ -50,7 +50,7 @@ body {
 
     list-style: none;
 
-    gap: 28px;
+    gap: 30px;
 
     flex: 1;
 }
@@ -128,191 +128,154 @@ body {
 
 
 /* =========================
-   POPULAR HEADER
+   CATEGORY SECTION
 ========================= */
 
-.popular-header {
-    text-align: center;
+.category-section {
+    min-height: 650px;
 
-    padding: 80px 20px 50px;
+    padding: 90px 6%;
+
+    text-align: center;
 }
 
 
-.popular-header h1 {
-    font-size: 52px;
-
+.category-section h1 {
     color: #d40f2f;
 
-    margin-bottom: 18px;
+    font-size: 52px;
+
+    margin-bottom: 15px;
 }
 
 
-.popular-header p {
-    max-width: 700px;
-
-    margin: auto;
-
+.category-intro {
     color: #666;
 
     font-size: 18px;
 
     line-height: 1.6;
+
+    max-width: 700px;
+
+    margin: 0 auto 55px;
 }
 
 
 /* =========================
-   POPULAR SECTION
+   CATEGORY CONTAINER
 ========================= */
 
-.popular-section {
-    padding: 20px 6% 90px;
-}
-
-
-.popular-grid {
-    max-width: 1250px;
-
-    margin: auto;
-
+.category-container {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 30px;
+
+    max-width: 1400px;
+
+    margin: auto;
 }
 
 
 /* =========================
-   POPULAR CARD
+   CATEGORY CARD
 ========================= */
 
-.popular-card {
+.category-card {
+    text-decoration: none;
+
     background: white;
 
-    border-radius: 20px;
+    min-height: 310px;
 
-    overflow: hidden;
+    padding: 45px 30px;
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+    border-radius: 22px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
 
     transition: 0.3s;
+
+    border: 2px solid transparent;
 }
 
 
-.popular-card:hover {
-    transform: translateY(-8px);
+.category-card:hover {
+    transform: translateY(-10px);
 
-    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
-}
+    border-color: #d40f2f;
 
-
-.popular-card img {
-    width: 100%;
-
-    height: 240px;
-
-    object-fit: cover;
-
-    display: block;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 
 /* =========================
-   CARD CONTENT
+   ICON
 ========================= */
 
-.card-content {
-    padding: 25px;
-}
+.category-icon {
+    width: 80px;
 
-
-.category {
-    display: inline-block;
-
-    color: #d40f2f;
+    height: 80px;
 
     background: #fff0f2;
 
-    padding: 6px 13px;
+    border-radius: 50%;
 
-    border-radius: 20px;
+    display: flex;
 
-    font-size: 13px;
+    align-items: center;
 
-    font-weight: bold;
+    justify-content: center;
 
-    margin-bottom: 12px;
+    font-size: 40px;
+
+    margin-bottom: 22px;
 }
 
 
-.card-content h2 {
-    font-size: 27px;
+/* =========================
+   CARD TEXT
+========================= */
 
+.category-card h2 {
     color: #333;
 
-    margin-bottom: 12px;
+    font-size: 25px;
+
+    margin-bottom: 15px;
 }
 
 
-.card-content p {
+.category-card p {
     color: #666;
 
     font-size: 15px;
 
     line-height: 1.6;
 
-    min-height: 72px;
-
-    margin-bottom: 18px;
-}
-
-
-/* =========================
-   RECIPE INFO
-========================= */
-
-.recipe-info {
-    display: flex;
-
-    gap: 20px;
-
-    color: #555;
-
-    font-size: 14px;
+    max-width: 250px;
 
     margin-bottom: 20px;
 }
 
 
-/* =========================
-   VIEW BUTTON
-========================= */
-
-.view-btn {
-    display: inline-block;
-
-    text-decoration: none;
-
-    background: #d40f2f;
-
-    color: white;
-
-    padding: 11px 22px;
-
-    border-radius: 22px;
+.category-card span {
+    color: #d40f2f;
 
     font-size: 14px;
 
     font-weight: bold;
-
-    transition: 0.3s;
-}
-
-
-.view-btn:hover {
-    background: #a90c25;
-
-    transform: translateY(-2px);
 }
 
 
@@ -350,7 +313,7 @@ footer p {
 @media (max-width: 1100px) {
 
     .navbar {
-        padding: 20px 3%;
+        padding: 0 3%;
     }
 
     .logo {
@@ -369,46 +332,33 @@ footer p {
         width: 150px;
     }
 
+    .category-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
 
     .navbar {
-        flex-wrap: wrap;
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
 
         gap: 20px;
     }
 
-    .nav-links {
-        order: 3;
+    .logo {
+        margin-right: 0;
+    }
 
-        width: 100%;
+    .nav-links {
+        flex-wrap: wrap;
 
         justify-content: center;
-
-        flex-wrap: wrap;
-    }
-
-    .popular-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .popular-header h1 {
-        font-size: 38px;
-    }
-
-    .popular-header p {
-        font-size: 16px;
-    }
-
-    .popular-grid {
-        grid-template-columns: 1fr;
     }
 
     .right-section {
@@ -417,17 +367,29 @@ footer p {
         justify-content: center;
     }
 
+    .category-section h1 {
+        font-size: 40px;
+    }
+
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
 
-    .navbar {
-        flex-direction: column;
+    .category-container {
+        grid-template-columns: 1fr;
     }
 
-    .logo {
-        margin-right: 0;
+    .category-section {
+        padding: 60px 20px;
+    }
+
+    .category-section h1 {
+        font-size: 34px;
+    }
+
+    .category-intro {
+        font-size: 16px;
     }
 
     .right-section {

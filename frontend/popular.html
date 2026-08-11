@@ -4,85 +4,240 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Popular Recipes - Nepali RecipeHub</title>
 
-    
-    <link rel="stylesheet" href="popular.css">
+    <link rel="stylesheet" href="css/popular.css">
 
 </head>
 
 <body>
 
-    <section class="popular-container">
+
+    <!-- =========================
+         NAVIGATION BAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <h2>Nepali RecipeHub</h2>
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="recipes.html">Recipes</a>
+            </li>
+
+            <li>
+                <a href="categories.html">Categories</a>
+            </li>
+
+            <li>
+                <a href="popular.html" class="active">Popular</a>
+            </li>
+
+            <li>
+                <a href="about.html">About</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+            <li>
+                <a href="add-recipe.html">Add Recipe</a>
+            </li>
+
+        </ul>
+
+
+        <div class="right-section">
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    placeholder="Search Recipes..."
+                >
+
+            </div>
+
+
+            <a href="login1.html" class="login-btn">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         POPULAR HEADER
+    ========================== -->
+
+    <section class="popular-header">
 
         <h1>Popular Nepali Dishes</h1>
 
-        <p class="popular-intro">
-            Explore some of the most loved and popular traditional
-            Nepali dishes enjoyed by people across Nepal.
+        <p>
+            Discover some of the most loved and traditional
+            Nepali dishes enjoyed across Nepal.
         </p>
 
+    </section>
 
-        <div class="popular-recipes">
 
 
-            <!-- MOMO -->
+    <!-- =========================
+         POPULAR RECIPES
+    ========================== -->
 
-            <div class="popular-card">
+    <section class="popular-section">
 
-                <img src="Image 1.jpg" alt="Momo">
-
-                <div class="card-content">
-
-                    <h2>Momo</h2>
-
-                    <p>
-                        Soft and delicious steamed dumplings filled with
-                        tasty ingredients and served with spicy tomato chutney.
-                    </p>
-
-                </div>
-
-            </div>
+        <div class="popular-grid">
 
 
             <!-- DAL BHAT -->
 
             <div class="popular-card">
 
-                <img src="dalbhat.png" alt="Dal Bhat">
+                <img
+                    src="dalbhat.png"
+                    alt="Dal Bhat"
+                >
 
                 <div class="card-content">
+
+                    <span class="category">
+                        Main Course
+                    </span>
 
                     <h2>Dal Bhat</h2>
 
                     <p>
-                        A traditional Nepali meal consisting of rice,
-                        lentils, vegetables, curry, and pickles.
+                        Nepal's famous traditional meal made with
+                        steamed rice, lentils, vegetables, curry,
+                        and delicious pickles.
                     </p>
+
+
+                    <div class="recipe-info">
+
+                        <span>⏱ 40 min</span>
+
+                        <span>⭐ 4.9</span>
+
+                    </div>
+
+
+                    <a
+                        href="dalbhat.html"
+                        class="view-btn"
+                    >
+                        View Recipe
+                    </a>
 
                 </div>
 
             </div>
 
 
+
             <!-- SEL ROTI -->
 
             <div class="popular-card">
 
-                <img src="selroti.png" alt="Sel Roti">
+                <img
+                    src="selroti.png"
+                    alt="Sel Roti"
+                >
 
                 <div class="card-content">
+
+                    <span class="category">
+                        Snacks
+                    </span>
 
                     <h2>Sel Roti</h2>
 
                     <p>
-                        A traditional sweet and crispy rice bread
-                        commonly prepared during Nepali festivals.
+                        A crispy and delicious traditional Nepali
+                        rice bread commonly prepared during festivals
+                        and special occasions.
                     </p>
+
+
+                    <div class="recipe-info">
+
+                        <span>⏱ 30 min</span>
+
+                        <span>⭐ 4.7</span>
+
+                    </div>
+
+
+                    <a
+                        href="selroti.html"
+                        class="view-btn"
+                    >
+                        View Recipe
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MOMO -->
+
+            <div class="popular-card">
+
+                <img
+                    src="Image 1.jpg"
+                    alt="Momo"
+                >
+
+                <div class="card-content">
+
+                    <span class="category">
+                        Snacks
+                    </span>
+
+                    <h2>Momo</h2>
+
+                    <p>
+                        Soft steamed dumplings filled with delicious
+                        ingredients and served with spicy Nepali
+                        tomato achar.
+                    </p>
+
+
+                    <div class="recipe-info">
+
+                        <span>⏱ 45 min</span>
+
+                        <span>⭐ 4.8</span>
+
+                    </div>
+
+
+                    <a
+                        href="recipe-details.html"
+                        class="view-btn"
+                    >
+                        View Recipe
+                    </a>
 
                 </div>
 
@@ -92,6 +247,27 @@
         </div>
 
     </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h2>Nepali RecipeHub</h2>
+
+        <p>
+            Bringing the authentic taste of Nepal to every kitchen.
+        </p>
+
+        <p>
+            © 2026 Nepali RecipeHub | All Rights Reserved
+        </p>
+
+    </footer>
+
 
 </body>
 

@@ -128,17 +128,17 @@ body {
 
 
 /* =========================
-   ABOUT HEADER
+   CONTACT HEADER
 ========================= */
 
-.about-header {
+.contact-header {
     text-align: center;
 
     padding: 75px 20px 50px;
 }
 
 
-.about-header h1 {
+.contact-header h1 {
     color: #d40f2f;
 
     font-size: 50px;
@@ -147,7 +147,7 @@ body {
 }
 
 
-.about-header p {
+.contact-header p {
     max-width: 700px;
 
     margin: auto;
@@ -161,224 +161,226 @@ body {
 
 
 /* =========================
-   ABOUT SECTION
+   CONTACT SECTION
 ========================= */
 
-.about-section {
-    padding: 30px 7% 80px;
+.contact-section {
+    padding: 25px 6% 85px;
 }
 
 
-.about-container {
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    align-items: center;
-
-    gap: 60px;
-}
-
-
-.about-image img {
-    width: 100%;
-
-    height: 380px;
-
-    object-fit: cover;
-
-    border-radius: 22px;
-
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-
-
-.about-content h2 {
-    color: #d40f2f;
-
-    font-size: 36px;
-
-    margin-bottom: 20px;
-}
-
-
-.about-content p {
-    color: #555;
-
-    font-size: 16px;
-
-    line-height: 1.8;
-
-    margin-bottom: 15px;
-}
-
-
-.about-content strong {
-    color: #d40f2f;
-}
-
-
-/* =========================
-   MISSION
-========================= */
-
-.mission-section {
-    background: #fff0e6;
-
-    text-align: center;
-
-    padding: 70px 6%;
-}
-
-
-.mission-section > h2 {
-    color: #d40f2f;
-
-    font-size: 38px;
-
-    margin-bottom: 15px;
-}
-
-
-.mission-section > p {
-    color: #666;
-
-    font-size: 17px;
-
-    max-width: 700px;
-
-    margin: 0 auto 45px;
-
-    line-height: 1.6;
-}
-
-
-.mission-container {
+.contact-container {
     max-width: 1150px;
 
     margin: auto;
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 0.9fr 1.1fr;
 
-    gap: 30px;
+    gap: 50px;
+
+    align-items: start;
 }
 
 
-.mission-card {
+/* =========================
+   CONTACT INFORMATION
+========================= */
+
+.contact-info {
+    padding: 15px 10px;
+}
+
+
+.contact-info h2 {
+    color: #d40f2f;
+
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+
+.intro {
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+.info-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
     background: white;
 
-    padding: 35px 25px;
+    padding: 18px;
 
-    border-radius: 20px;
+    margin-bottom: 16px;
 
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
 
     transition: 0.3s;
 }
 
 
-.mission-card:hover {
-    transform: translateY(-7px);
-
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+.info-box:hover {
+    transform: translateX(5px);
 }
 
 
-.icon {
-    font-size: 42px;
+.info-icon {
+    width: 50px;
 
-    margin-bottom: 15px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fff0f2;
+
+    border-radius: 50%;
+
+    font-size: 24px;
 }
 
 
-.mission-card h3 {
-    font-size: 22px;
+.info-box h3 {
+    font-size: 17px;
 
-    margin-bottom: 12px;
+    margin-bottom: 5px;
 
     color: #333;
 }
 
 
-.mission-card p {
+.info-box p {
     color: #666;
 
-    line-height: 1.6;
-
-    font-size: 15px;
+    font-size: 14px;
 }
 
 
 /* =========================
-   DISCOVER SECTION
+   CONTACT FORM
 ========================= */
 
-.discover-section {
-    padding: 75px 6%;
-}
-
-
-.discover-container {
-    max-width: 1150px;
-
-    margin: auto;
-}
-
-
-.discover-container > h2 {
-    text-align: center;
-
-    color: #d40f2f;
-
-    font-size: 38px;
-
-    margin-bottom: 40px;
-}
-
-
-.discover-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 25px;
-}
-
-
-.discover-item {
+.contact-form {
     background: white;
 
-    padding: 28px;
+    padding: 35px;
 
-    border-radius: 18px;
+    border-radius: 22px;
 
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.07);
-
-    border-left: 5px solid #d40f2f;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
 }
 
 
-.discover-item h3 {
+.contact-form h2 {
+    color: #d40f2f;
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+
+.field {
+    margin-bottom: 20px;
+}
+
+
+.field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
     color: #333;
-
-    font-size: 21px;
-
-    margin-bottom: 10px;
 }
 
 
-.discover-item p {
-    color: #666;
+.field input,
+.field textarea {
+    width: 100%;
 
-    line-height: 1.6;
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    padding: 13px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
 
     font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+.field input {
+    height: 46px;
+}
+
+
+.field textarea {
+    resize: vertical;
+
+    min-height: 130px;
+}
+
+
+.field input:focus,
+.field textarea:focus {
+    border-color: #d40f2f;
+
+    box-shadow: 0 0 0 3px rgba(212, 15, 47, 0.08);
+}
+
+
+.send-btn {
+    border: none;
+
+    background: #d40f2f;
+
+    color: white;
+
+    padding: 13px 28px;
+
+    border-radius: 24px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.send-btn:hover {
+    background: #a90c25;
+
+    transform: translateY(-2px);
 }
 
 
@@ -419,17 +421,21 @@ footer p {
         padding: 20px 3%;
     }
 
+
     .logo {
         margin-right: 25px;
     }
+
 
     .nav-links {
         gap: 15px;
     }
 
+
     .nav-links a {
         font-size: 14px;
     }
+
 
     .search-box input {
         width: 150px;
@@ -446,6 +452,7 @@ footer p {
         gap: 20px;
     }
 
+
     .nav-links {
         order: 3;
 
@@ -457,15 +464,10 @@ footer p {
     }
 
 
-    .about-container {
+    .contact-container {
         grid-template-columns: 1fr;
 
         gap: 35px;
-    }
-
-
-    .mission-container {
-        grid-template-columns: 1fr;
     }
 
 }
@@ -473,18 +475,13 @@ footer p {
 
 @media (max-width: 600px) {
 
-    .about-header h1 {
+    .contact-header h1 {
         font-size: 38px;
     }
 
 
-    .about-header p {
+    .contact-header p {
         font-size: 16px;
-    }
-
-
-    .discover-grid {
-        grid-template-columns: 1fr;
     }
 
 
@@ -492,6 +489,11 @@ footer p {
         width: 100%;
 
         justify-content: center;
+    }
+
+
+    .contact-form {
+        padding: 25px 20px;
     }
 
 }

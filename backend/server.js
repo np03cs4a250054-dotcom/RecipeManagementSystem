@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend')));
  
-app.get('/', (req, res) => res.redirect('/signup.html'));
+app.get('/', (req, res) => res.redirect('frontend/index.html'));
  
 app.post('/api/signup', (req, res) => {
   const { name, email, password } = req.body;
