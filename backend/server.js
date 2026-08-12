@@ -1,7 +1,7 @@
 require("dotenv").config();
 
-const path = require("path");
 const express = require("express");
+const path = require("path");
 const bcrypt = require("bcryptjs");
 
 const { get, run } = require("./db");
@@ -9,27 +9,29 @@ const { get, run } = require("./db");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ===============================
+// ===================================
 // Middleware
-// ===============================
+// ===================================
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../frontend")));
 
-// ===============================
+// ===================================
 // Home
-// ===============================
+// ===================================
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
-// ===============================
+// ===================================
 // Signup
-// ===============================
+// ===================================
 
 app.post("/api/signup", async (req, res) => {
+  console.log("Signup Request:", req.body);
+
   const { name, email, password } = req.body;
 
   if (!name || !email || !password) {
@@ -40,12 +42,14 @@ app.post("/api/signup", async (req, res) => {
   }
 
   try {
-    const existing = await get("SELECT id FROM users WHERE email = ?", [email]);
+    const existingUser = await get("SELECT * FROM users WHERE email = ?", [
+      email,
+    ]);
 
-    if (existing) {
-      return res.status(409).json({
+    if (existingUser) {
+      return res.status(400).json({
         success: false,
-        message: "Email already exists.",
+        message: "Email already registered.",
       });
     }
 
@@ -57,12 +61,14 @@ app.post("/api/signup", async (req, res) => {
       hashedPassword,
     ]);
 
+    console.log("User inserted successfully.");
+
     res.json({
       success: true,
-      message: "Account created successfully!",
+      message: "Signup Successful!",
     });
   } catch (err) {
-    console.error(err);
+    console.error("Signup Error:", err);
 
     res.status(500).json({
       success: false,
@@ -71,17 +77,19 @@ app.post("/api/signup", async (req, res) => {
   }
 });
 
-// ===============================
+// ===================================
 // Login
-// ===============================
+// ===================================
 
 app.post("/api/login", async (req, res) => {
+  console.log("Login Request:", req.body);
+
   const { email, password } = req.body;
 
   if (!email || !password) {
     return res.status(400).json({
       success: false,
-      message: "Email and password are required.",
+      message: "Email and password required.",
     });
   }
 
@@ -95,9 +103,9 @@ app.post("/api/login", async (req, res) => {
       });
     }
 
-    const match = bcrypt.compareSync(password, user.password);
+    const validPassword = bcrypt.compareSync(password, user.password);
 
-    if (!match) {
+    if (!validPassword) {
       return res.status(401).json({
         success: false,
         message: "Invalid email or password.",
@@ -109,7 +117,7 @@ app.post("/api/login", async (req, res) => {
       message: `Welcome back ${user.name}!`,
     });
   } catch (err) {
-    console.error(err);
+    console.error("Login Error:", err);
 
     res.status(500).json({
       success: false,
@@ -118,11 +126,13 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
-// ===============================
+// ===================================
 // Add Recipe
-// ===============================
+// ===================================
 
 app.post("/api/addRecipe", async (req, res) => {
+  console.log("Recipe Request:", req.body);
+
   const {
     recipeName,
     category,
@@ -149,7 +159,14 @@ app.post("/api/addRecipe", async (req, res) => {
   try {
     await run(
       `INSERT INTO recipes
-            (recipeName, category, cookingTime, difficulty, ingredients, instructions)
+            (
+                recipeName,
+                category,
+                cookingTime,
+                difficulty,
+                ingredients,
+                instructions
+            )
             VALUES (?, ?, ?, ?, ?, ?)`,
       [
         recipeName,
@@ -161,12 +178,14 @@ app.post("/api/addRecipe", async (req, res) => {
       ],
     );
 
+    console.log("Recipe inserted.");
+
     res.json({
       success: true,
       message: "Recipe added successfully!",
     });
   } catch (err) {
-    console.error(err);
+    console.error("Recipe Error:", err);
 
     res.status(500).json({
       success: false,
@@ -175,10 +194,13 @@ app.post("/api/addRecipe", async (req, res) => {
   }
 });
 
-// ===============================
+// ===================================
 // Start Server
-// ===============================
+// ===================================
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`================================`);
+  console.log(`Server running on`);
+  console.log(`http://localhost:${PORT}`);
+  console.log(`================================`);
 });

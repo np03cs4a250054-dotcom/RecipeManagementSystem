@@ -9,6 +9,18 @@ const db = createClient({
 async function initializeDatabase() {
   try {
     await db.execute(`
+CREATE TABLE IF NOT EXISTS recipes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    recipeName TEXT NOT NULL,
+    category TEXT NOT NULL,
+    cookingTime TEXT NOT NULL,
+    difficulty TEXT NOT NULL,
+    ingredients TEXT NOT NULL,
+    instructions TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+`);
+    await db.execute(`
       CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
