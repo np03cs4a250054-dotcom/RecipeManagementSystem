@@ -8,18 +8,9 @@ const db = createClient({
 
 async function initializeDatabase() {
   try {
-    await db.execute(`
-CREATE TABLE IF NOT EXISTS recipes (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    recipeName TEXT NOT NULL,
-    category TEXT NOT NULL,
-    cookingTime TEXT NOT NULL,
-    difficulty TEXT NOT NULL,
-    ingredients TEXT NOT NULL,
-    instructions TEXT NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-);
-`);
+    // ===============================
+    // Users Table
+    // ===============================
     await db.execute(`
       CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -30,48 +21,48 @@ CREATE TABLE IF NOT EXISTS recipes (
       );
     `);
 
+    // ===============================
+    // Recipes Table
+    // ===============================
     await db.execute(`
-      CREATE TABLE IF NOT EXISTS books (
-        id TEXT PRIMARY KEY,
-        title TEXT NOT NULL,
-        author TEXT NOT NULL,
-        publisher TEXT NOT NULL,
-        year INTEGER,
-        quantity INTEGER NOT NULL,
-        category TEXT,
-        isbn TEXT
+      CREATE TABLE IF NOT EXISTS recipes (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        recipeName TEXT NOT NULL,
+        category TEXT NOT NULL,
+        cookingTime TEXT NOT NULL,
+        difficulty TEXT NOT NULL,
+        ingredients TEXT NOT NULL,
+        instructions TEXT NOT NULL,
+        image TEXT,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
       );
     `);
 
+    // ===============================
+    // Contact Messages
+    // ===============================
     await db.execute(`
-      CREATE TABLE IF NOT EXISTS members (
-        memberId TEXT PRIMARY KEY,
+      CREATE TABLE IF NOT EXISTS contacts (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
-        gender TEXT NOT NULL,
-        email TEXT,
-        phone TEXT,
-        type TEXT NOT NULL,
-        address TEXT
+        email TEXT NOT NULL,
+        subject TEXT,
+        message TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
       );
     `);
 
+    // ===============================
+    // Favorite Recipes
+    // ===============================
     await db.execute(`
-      CREATE TABLE IF NOT EXISTS issued_books (
-        issueId TEXT PRIMARY KEY,
-
-        memberId TEXT NOT NULL,
-        memberName TEXT NOT NULL,
-
-        bookId TEXT NOT NULL,
-        bookTitle TEXT NOT NULL,
-
-        issueDate TEXT NOT NULL,
-        dueDate TEXT NOT NULL,
-
-        status TEXT DEFAULT 'Issued',
-
-        FOREIGN KEY(memberId) REFERENCES members(memberId),
-        FOREIGN KEY(bookId) REFERENCES books(id)
+      CREATE TABLE IF NOT EXISTS favorites (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        recipe_id INTEGER NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY(user_id) REFERENCES users(id),
+        FOREIGN KEY(recipe_id) REFERENCES recipes(id)
       );
     `);
 
@@ -84,6 +75,9 @@ CREATE TABLE IF NOT EXISTS recipes (
 
 initializeDatabase();
 
+// ===============================
+// Get One Record
+// ===============================
 async function get(sql, args = []) {
   const result = await db.execute({
     sql,
@@ -93,8 +87,9 @@ async function get(sql, args = []) {
   return result.rows[0];
 }
 
+// ===============================
 // Get Multiple Records
-
+// ===============================
 async function all(sql, args = []) {
   const result = await db.execute({
     sql,
@@ -104,8 +99,9 @@ async function all(sql, args = []) {
   return result.rows;
 }
 
+// ===============================
 // Insert / Update / Delete
-
+// ===============================
 async function run(sql, args = []) {
   const result = await db.execute({
     sql,
