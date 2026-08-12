@@ -3,7 +3,7 @@ const { createClient } = require("@libsql/client");
 
 const db = createClient({
   url: process.env.TURSO_DATABASE_URL,
-  authToken: process.env.TURSO_AUTH_TOKEN,
+  authToken: process.env.TURSO_DATABASE_TOKEN,
 });
 
 async function initializeDatabase() {
