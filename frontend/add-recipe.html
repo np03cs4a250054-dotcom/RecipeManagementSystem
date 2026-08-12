@@ -14,7 +14,6 @@
 
 <body>
 
-
     <!-- =========================
          NAVIGATION BAR
     ========================== -->
@@ -25,53 +24,21 @@
             <h2>Nepali RecipeHub</h2>
         </div>
 
-
         <ul class="nav-links">
-
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-
-            <li>
-                <a href="recipes.html">Recipes</a>
-            </li>
-
-            <li>
-                <a href="categories.html">Categories</a>
-            </li>
-
-            <li>
-                <a href="popular.html">Popular</a>
-            </li>
-
-            <li>
-                <a href="about.html">About</a>
-            </li>
-
-            <li>
-                <a href="contact.html">Contact</a>
-            </li>
-
-            <li>
-                <a href="add-recipe.html" class="active">
-                    Add Recipe
-                </a>
-            </li>
-
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="popular.html">Popular</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="add-recipe.html" class="active">Add Recipe</a></li>
         </ul>
-
 
         <div class="right-section">
 
             <div class="search-box">
-
-                <input
-                    type="text"
-                    placeholder="Search Recipes..."
-                >
-
+                <input type="text" placeholder="Search Recipes...">
             </div>
-
 
             <a href="login1.html" class="login-btn">
                 Login
@@ -80,8 +47,6 @@
         </div>
 
     </nav>
-
-
 
     <!-- =========================
          PAGE HEADER
@@ -92,13 +57,10 @@
         <h1>Add a New Recipe</h1>
 
         <p>
-            Share your favorite recipe with the Nepali RecipeHub
-            community.
+            Share your favorite recipe with the Nepali RecipeHub community.
         </p>
 
     </section>
-
-
 
     <!-- =========================
          RECIPE FORM
@@ -108,38 +70,28 @@
 
         <div class="form-container">
 
-
-            <form
-                action="#"
-                method="post"
-                enctype="multipart/form-data"
-            >
-
+            <form id="addRecipeForm" action="#" method="post" enctype="multipart/form-data">
 
                 <!-- Recipe Name -->
 
                 <div class="field">
 
-                    <label for="recipe-name">
+                    <label for="recipeName">
                         Recipe Name
                     </label>
 
                     <input
                         type="text"
-                        id="recipe-name"
+                        id="recipeName"
                         name="recipe-name"
                         placeholder="Enter recipe name"
-                        required
-                    >
+                        required>
 
                 </div>
-
-
 
                 <!-- Category + Cooking Time -->
 
                 <div class="form-row">
-
 
                     <div class="field">
 
@@ -150,59 +102,38 @@
                         <select
                             id="category"
                             name="category"
-                            required
-                        >
+                            required>
 
-                            <option value="">
-                                Select Category
-                            </option>
-
-                            <option value="main-course">
-                                Main Course
-                            </option>
-
-                            <option value="snacks">
-                                Snacks
-                            </option>
-
-                            <option value="desserts">
-                                Desserts
-                            </option>
-
-                            <option value="beverages">
-                                Beverages
-                            </option>
+                            <option value="">Select Category</option>
+                            <option value="main-course">Main Course</option>
+                            <option value="snacks">Snacks</option>
+                            <option value="desserts">Desserts</option>
+                            <option value="beverages">Beverages</option>
 
                         </select>
 
                     </div>
 
-
                     <div class="field">
 
-                        <label for="time">
+                        <label for="cookingTime">
                             Cooking Time
                         </label>
 
                         <input
                             type="text"
-                            id="time"
+                            id="cookingTime"
                             name="time"
                             placeholder="e.g. 30 minutes"
-                            required
-                        >
+                            required>
 
                     </div>
 
-
                 </div>
-
-
 
                 <!-- Difficulty + Image -->
 
                 <div class="form-row">
-
 
                     <div class="field">
 
@@ -213,29 +144,16 @@
                         <select
                             id="difficulty"
                             name="difficulty"
-                            required
-                        >
+                            required>
 
-                            <option value="">
-                                Select Difficulty
-                            </option>
-
-                            <option value="easy">
-                                Easy
-                            </option>
-
-                            <option value="medium">
-                                Medium
-                            </option>
-
-                            <option value="hard">
-                                Hard
-                            </option>
+                            <option value="">Select Difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
 
                         </select>
 
                     </div>
-
 
                     <div class="field">
 
@@ -247,15 +165,11 @@
                             type="file"
                             id="image"
                             name="image"
-                            accept="image/*"
-                        >
+                            accept="image/*">
 
                     </div>
 
-
                 </div>
-
-
 
                 <!-- Ingredients -->
 
@@ -269,17 +183,13 @@
                         id="ingredients"
                         name="ingredients"
                         placeholder="Enter ingredients here..."
-                        required
-                    ></textarea>
+                        required></textarea>
 
                     <small>
-                        Example: Rice flour, chicken, onion,
-                        garlic, ginger, salt...
+                        Example: Rice flour, chicken, onion, garlic, ginger, salt...
                     </small>
 
                 </div>
-
-
 
                 <!-- Instructions -->
 
@@ -293,8 +203,7 @@
                         id="instructions"
                         name="instructions"
                         placeholder="Enter the cooking steps here..."
-                        required
-                    ></textarea>
+                        required></textarea>
 
                     <small>
                         Write the cooking instructions step by step.
@@ -302,7 +211,9 @@
 
                 </div>
 
+                <!-- Message -->
 
+                <p id="message"></p>
 
                 <!-- Buttons -->
 
@@ -310,29 +221,23 @@
 
                     <button
                         type="submit"
-                        class="submit-btn"
-                    >
+                        class="submit-btn">
                         Add Recipe
                     </button>
 
-
                     <button
                         type="reset"
-                        class="reset-btn"
-                    >
+                        class="reset-btn">
                         Clear Form
                     </button>
 
                 </div>
-
 
             </form>
 
         </div>
 
     </section>
-
-
 
     <!-- =========================
          FOOTER
@@ -352,6 +257,7 @@
 
     </footer>
 
+    <script src="js/add-recipe.js"></script>
 
 </body>
 

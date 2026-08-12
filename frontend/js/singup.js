@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (data.success) {
         showMessage(data.message, 'success');
         form.reset();
-        setTimeout(() => { window.location.href = 'login.html'; }, 1200);
+        setTimeout(() => { window.location.href = 'login1.html'; }, 1200);
       } else {
         showMessage(data.message, 'error');
       }
