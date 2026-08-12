@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await res.json();
 
       if (data.success) {
+        window.location.href="index.html";
         showMessage(data.message, 'success');
         form.reset();
       } else {
