@@ -30,8 +30,8 @@ app.get("/", (req, res) => {
 // ===================================
 
 app.post("/api/signup", async (req, res) => {
-  console.log("Signup Request:", req.body);
-
+  console.log("Signup request received");
+  console.log(req.body);
   const { name, email, password } = req.body;
 
   if (!name || !email || !password) {
@@ -68,11 +68,12 @@ app.post("/api/signup", async (req, res) => {
       message: "Signup Successful!",
     });
   } catch (err) {
-    console.error("Signup Error:", err);
+    console.error("Signup Error:");
+    console.error(err);
 
     res.status(500).json({
       success: false,
-      message: "Signup failed.",
+      message: err.message,
     });
   }
 });
@@ -82,7 +83,8 @@ app.post("/api/signup", async (req, res) => {
 // ===================================
 
 app.post("/api/login", async (req, res) => {
-  console.log("Login Request:", req.body);
+  console.log("Signup request received");
+  console.log(req.body);
 
   const { email, password } = req.body;
 
@@ -117,11 +119,12 @@ app.post("/api/login", async (req, res) => {
       message: `Welcome back ${user.name}!`,
     });
   } catch (err) {
-    console.error("Login Error:", err);
+    console.error("LOGIN ERROR:");
+    console.error(err);
 
     res.status(500).json({
       success: false,
-      message: "Login failed.",
+      message: err.message,
     });
   }
 });
